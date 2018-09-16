@@ -1,0 +1,26 @@
+{
+  "name": "format-help",
+  "version": "0.0.1",
+  "description": "监听文件自动格式化，自动重启进程",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tangciwei/format-help.git"
+  },
+  "keywords": [
+    "格式化"
+  ],
+  "author": "tangciwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tangciwei/format-help/issues"
+  },
+  "homepage": "https://github.com/tangciwei/format-help#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "fecs": "^1.6.1"
+  }
+}
