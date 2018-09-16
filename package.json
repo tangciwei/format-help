@@ -1,8 +1,8 @@
 {
   "name": "format-help",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "监听文件自动格式化，自动重启进程",
-  "main": "index.js",
+  "main": "src/index.js",
   "bin": {
     "fh": "bin/bin"
   },
