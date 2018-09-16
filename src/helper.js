@@ -1,3 +1,7 @@
+/**
+ * 后续本文件将逐步放入常用文件操作方法
+ */
+
 const util = require('util');
 let fs = require('fs');
 let path = require('path');
@@ -92,13 +96,6 @@ async function traveAction(root, callback = () => {
     delTreeEmpty(tree);
     return tree;
 }
-// async function test() {
-//    let tree = await traveAction(__dirname+'/../',(name)=>{
-//        // log(name);
-//    })
-//    logJ(tree);
-// }
-// test();
 
 module.exports = {
     promisify,

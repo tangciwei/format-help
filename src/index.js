@@ -2,16 +2,7 @@ let {log, traveAction} = require('./helper');
 let fs = require('fs');
 let format = require('./format');
 
-// promisify,
-// myPromisify,
-// readFile,
-// writeFile,
-// readdir,
-// log,
-// logJ,
-// traveAction
-
-async function dealFile() {
+function dealFile(callback = ()=>{}) {
     let lock = false;
     return function (path) {
         fs.watch(path, (curr, prev) => {
@@ -19,6 +10,7 @@ async function dealFile() {
                 lock = true;
                 format(path).then(ok => {
                     lock = false;
+                    callback(path)
                 });
             }
 
@@ -26,12 +18,8 @@ async function dealFile() {
     };
 }
 
-async function start() {
-    await traveAction('/Users/tangciwei/learn/code/github/format-help/test', (path) => {
-        dealFile()(path);
-    });
-
-    // let data = await format();
-    // console.log(data);
+module.exports = function formatHelp(dirname = process.cwd(),callback) {
+	 traveAction(dirname, (path) => {
+	    dealFile(callback)(path);
+	});
 }
-start();
